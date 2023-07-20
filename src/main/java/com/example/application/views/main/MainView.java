@@ -27,7 +27,6 @@ public class MainView extends HorizontalLayout {
             Notification.show("Hello " + name.getValue());
         });
         sayHello.addClickShortcut(Key.ENTER);
-
         setMargin(true);
         setVerticalComponentAlignment(Alignment.END, name, sayHello, span);
 
