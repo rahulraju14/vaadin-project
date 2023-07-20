@@ -2,6 +2,7 @@ package com.example.application.views.main;
 
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -14,19 +15,23 @@ public class MainView extends HorizontalLayout {
 
     private TextField name;
     private Button sayHello;
+    private Span span = new Span();
 
     public MainView() {
         name = new TextField("Your name");
         sayHello = new Button("Say hello");
+        span.getElement().setAttribute("style", "align-self: flex-end; font-size: 3em; margin-left: 2em; color: red; background: lavender;");
         sayHello.addClickListener(e -> {
+        	span.removeAll();
+        	span.add("!!!!! HAPPY BIRTHDAY " + name.getValue().toUpperCase() + " IN ADVANCE !!!!!!!!");
             Notification.show("Hello " + name.getValue());
         });
         sayHello.addClickShortcut(Key.ENTER);
 
         setMargin(true);
-        setVerticalComponentAlignment(Alignment.END, name, sayHello);
+        setVerticalComponentAlignment(Alignment.END, name, sayHello, span);
 
-        add(name, sayHello);
+        add(name, sayHello, span);
     }
 
 }
