@@ -23,7 +23,7 @@ public class MainView extends HorizontalLayout {
         span.getElement().setAttribute("style", "align-self: flex-end; font-size: 3em; margin-left: 2em; color: red; background: lavender;");
         sayHello.addClickListener(e -> {
         	span.removeAll();
-        	span.add("Welcome " + name.getValue().toUpperCase());
+        	span.add("Welcome :" + name.getValue().toUpperCase());
             Notification.show("Hello " + name.getValue());
         });
         sayHello.addClickShortcut(Key.ENTER);
