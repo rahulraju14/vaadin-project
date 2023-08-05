@@ -25,6 +25,7 @@ public class MainView extends HorizontalLayout {
         	span.removeAll();
         	span.add("Welcome :" + name.getValue().toUpperCase());
             Notification.show("Hello " + name.getValue());
+            span.removeAll();
         });
         sayHello.addClickShortcut(Key.ENTER);
         setMargin(true);
